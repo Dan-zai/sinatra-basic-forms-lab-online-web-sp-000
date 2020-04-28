@@ -1,13 +1,9 @@
 class Puppy
-  attr_reader :breed
-  attr_accessor :months_old, :name
+	attr_accessor :name, :age, :breed
 
-  def initialize(name,breed,months_old)
-    @breed = breed
-    @months_old = months_old
-    @name = name
-  end
-
-end
+	def initialize(attributes)
+		attributes.each {|key, value| self.send(("#{key}="), value)}
+	end
 
 
+end 
